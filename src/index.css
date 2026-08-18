@@ -232,7 +232,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .detail-list {
   list-style: none;
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 0;
   margin: 0;
 }
@@ -242,7 +242,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   grid-template-columns: 32px 180px 1fr;
   align-items: start;
   column-gap: 8px;
-  margin-top: 20px;
+  margin-top: 12px;
   margin-bottom: 10px;
   font-weight: 400;
   line-height: 1.5;
