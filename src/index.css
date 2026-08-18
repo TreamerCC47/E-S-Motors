@@ -470,7 +470,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand-logo-card img {
   display: block;
   width: auto;
-  height: 30px;
+  height: 3
+  50px;
   max-width: 100px;
   object-fit: contain;
 }
