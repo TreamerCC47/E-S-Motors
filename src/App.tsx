@@ -16,7 +16,12 @@ const WHATSAPP_NUMBER = '27739502924';
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   'Hello E&S Motors, I would like help with an electronic steering rack.',
 )}`;
-
+const PUBLIC_PHONE = '+27 73 950 2924';
+const PHONE_LINK = 'tel:+27739502924';
+const PUBLIC_EMAIL = 'Sakhilembanjwa049@gmail.com';
+const SERVICE_AREA = 'Nationwide across South Africa';
+const BUSINESS_HOURS = '08:00–18:00';
+const FACEBOOK_LINK = 'https://www.facebook.com/share/1ERqT4dgj3/';
 const workshopImages = [
   { src: workshopShelves, alt: 'Electronic steering racks arranged on workshop shelving', label: 'Racks on hand / ready to identify', wide: true },
   { src: electronicsStock, alt: 'Electronic steering units laid out for inspection', label: 'Control units / component-level work' },
@@ -393,15 +398,32 @@ const submitForm = (event: FormEvent<HTMLFormElement>) => {
                 <span className="brand-mark">E&amp;S</span>
                 <span className="brand-copy"><span className="brand-name">E&amp;S Motors</span><span className="brand-sub">Steering rack specialists</span></span>
               </a>
-              <p className="footer-note">Focused expertise for electronic steering racks across selected Audi and Porsche vehicles.</p>
+              <p className="footer-note">
+  Focused expertise for electronic steering racks across selected Audi and Porsche vehicles.
+</p>
+
+<div className="footer-contact" aria-label="E&S Motors contact details">
+  <a href={PHONE_LINK}>{PUBLIC_PHONE}</a>
+  <a href={`mailto:${PUBLIC_EMAIL}`}>{PUBLIC_EMAIL}</a>
+  <span>{SERVICE_AREA}</span>
+  <span>Hours: {BUSINESS_HOURS}</span>
+</div>
             </div>
             <div className="footer-nav">
-              <a href="#expertise" data-testid="footer-link-expertise">Expertise</a>
-              <a href="#coverage" data-testid="footer-link-coverage">Coverage</a>
-              <a href="#request" data-testid="footer-link-request">Request help</a>
-            </div>
+  <a href="#expertise" data-testid="footer-link-expertise">Expertise</a>
+  <a href="#coverage" data-testid="footer-link-coverage">Coverage</a>
+  <a href="#request" data-testid="footer-link-request">Request help</a>
+  <a
+    href={FACEBOOK_LINK}
+    target="_blank"
+    rel="noopener noreferrer"
+    data-testid="footer-link-facebook"
+  >
+    Facebook <ArrowRight size={14} />
+  </a>
+</div>
           </div>
-          <div className="footer-bottom"><span>© E&amp;S Motors Pty Ltd. We Are Available Across South Africa.</span><span>Precision automotive engineering, plainly explained.</span></div>
+          <div className="footer-bottom"><span>© E&amp;S Motors Pty Ltd. {SERVICE_AREA}.</span></div>
         </div>
       </footer>
     </div>
