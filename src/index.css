@@ -433,3 +433,68 @@ button, a { -webkit-tap-highlight-color: transparent; }
     width: 100%;
   }
 }
+.brand-coverage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 26px;
+  padding: 18px 0;
+  border-bottom: 1px solid #9db5bb;
+}
+
+.brand-coverage-label {
+  color: #60737a;
+  font: 10px var(--app-font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 10px 16px;
+  border: 1px solid #9db5bb;
+  background: rgba(255, 255, 255, 0.35);
+  color: #17303c;
+}
+
+.brand-logo-card img {
+  display: block;
+  width: auto;
+  height: 30px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.brand-logo-card span {
+  color: #60737a;
+  font: 10px var(--app-font-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+  .brand-coverage {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .brand-logos {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .brand-logo-card {
+    flex: 1 1 180px;
+  }
+}

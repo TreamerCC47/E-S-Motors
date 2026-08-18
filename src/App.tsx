@@ -422,6 +422,24 @@ setRequestVehicle('');
               </div>
               <p>A focused range means deeper familiarity with the systems, symptoms and steering racks found across these Audi and Porsche vehicles.</p>
             </div>
+            <div
+  className="brand-coverage reveal reveal-delay-1"
+  aria-label="Vehicle brands covered"
+>
+  <div className="brand-coverage-label">Supported platforms</div>
+
+  <div className="brand-logos">
+    <div className="brand-logo-card">
+      <img src="/audi.svg" alt="Audi logo" />
+      <span>Audi coverage</span>
+    </div>
+
+    <div className="brand-logo-card">
+      <img src="/porsche.svg" alt="Porsche logo" />
+      <span>Porsche coverage</span>
+    </div>
+  </div>
+</div>
          <div
   className="model-map reveal reveal-delay-1"
   role="tablist"
