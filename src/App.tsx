@@ -228,14 +228,15 @@ function Home() {
             <div className="image-caption">The rack is the message / We read it carefully</div>
           </div>
           <div className="split-copy reveal">
-            <div className="eyebrow">/ The work itself</div>
-            <h2>Repair what<br />makes sense.</h2>
-            <p>Replacement is not always the answer. We look at the evidence, the vehicle and the job in front of you — then make the route clear.</p>
+            <div className="eyebrow">/ Usefull Tip</div>
+            <h2>Signs of a<br />bad rack.</h2>
+            <p>A steering rack is the core part of a car steering system. It changes the turning motion of your steering wheel into the side-to-side movement that turns your front wheels</p>
             <ul className="detail-list">
-              <li><Check size={16} /> Steering rack supply</li>
-              <li><Check size={16} /> Diagnostic support</li>
-              <li><Check size={16} /> Electronic rack repair</li>
-              <li><Check size={16} /> Replacement guidance</li>
+              <li><Check size={16} /> Loose wheel: A dead spot where the car does not turn right away.</li>
+              <li><Check size={16} /> Hard turning: The wheel feels heavy or tight.</li>
+              <li><Check size={16} /> Fluid leaks: Puddles or wet spots from broken seals.</li>
+              <li><Check size={16} /> Car wandering: The vehicle drifts or is hard to keep straight in a lane.</li>
+              <li><Check size={16} /> Noises: Grinding, clunking, or knocking sounds when turning.</li>
             </ul>
           </div>
         </section>
