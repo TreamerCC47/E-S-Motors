@@ -228,18 +228,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .field.full { grid-column: auto; }
 }
 
+
+
 .detail-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 1;
 }
 
 .detail-list li {
   display: grid;
   grid-template-columns: 32px 180px 1fr;
   align-items: start;
-  column-gap: 12px;
-  margin-bottom: 20px;
+  column-gap: 8px;
+  margin-bottom: 10px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -249,19 +251,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
   align-items: center;
   justify-content: center;
 
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 
   border: 2px solid currentColor;
   border-radius: 50%;
 
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
   margin-top: 2px;
 }
 
 .detail-list li strong {
-  font-weight: 700;
+  font-weight: 600;
   display: block;
 }
