@@ -13,6 +13,9 @@ import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 
 const models = ['A4', 'A5', 'A6', 'A7', 'A8', 'Q5', 'Q7', 'Porsche'];
 const WHATSAPP_NUMBER = '27739502924';
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  'Hello E&S Motors, I would like help with an electronic steering rack.',
+)}`;
 
 const workshopImages = [
   { src: workshopShelves, alt: 'Electronic steering racks arranged on workshop shelving', label: 'Racks on hand / ready to identify', wide: true },
@@ -105,9 +108,15 @@ const submitForm = (event: FormEvent<HTMLFormElement>) => {
             <a href="#workshop" data-testid="link-workshop">Workshop</a>
             <a href="#process" data-testid="link-process">How it works</a>
           </div>
-          <a className="nav-cta" href="#request" data-testid="link-request-quote">
-            Request help <ArrowRight size={15} />
-          </a>
+          <a
+  className="nav-cta"
+  href={WHATSAPP_LINK}
+  target="_blank"
+  rel="noreferrer"
+  data-testid="link-whatsapp"
+>
+  WhatsApp us <ArrowRight size={15} />
+</a>
           <button className="mobile-toggle" onClick={() => setMenuOpen((value) => !value)} aria-label={menuOpen ? 'Close menu' : 'Open menu'} data-testid="button-mobile-menu">
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -117,7 +126,26 @@ const submitForm = (event: FormEvent<HTMLFormElement>) => {
               <a href="#coverage" onClick={() => setMenuOpen(false)} data-testid="mobile-link-coverage">Coverage</a>
               <a href="#workshop" onClick={() => setMenuOpen(false)} data-testid="mobile-link-workshop">Workshop</a>
               <a href="#process" onClick={() => setMenuOpen(false)} data-testid="mobile-link-process">How it works</a>
-              <a className="button-primary" href="#request" onClick={() => setMenuOpen(false)} data-testid="mobile-link-request">Request help <ArrowRight size={15} /></a>
+              <>
+  <a
+    className="button-primary"
+    href="#request"
+    onClick={() => setMenuOpen(false)}
+    data-testid="mobile-link-request"
+  >
+    Request help <ArrowRight size={15} />
+  </a>
+  <a
+    className="button-ghost"
+    href={WHATSAPP_LINK}
+    target="_blank"
+    rel="noreferrer"
+    onClick={() => setMenuOpen(false)}
+    data-testid="mobile-link-whatsapp"
+  >
+    Chat on WhatsApp <ArrowRight size={15} />
+  </a>
+</>
             </div>
           )}
         </nav>
@@ -132,6 +160,15 @@ const submitForm = (event: FormEvent<HTMLFormElement>) => {
             <div className="hero-actions reveal reveal-delay-3">
               <a className="button-primary" href="#request" data-testid="button-hero-request">Tell us what’s wrong <ArrowDownRight size={16} /></a>
               <a className="button-ghost" href="#coverage" data-testid="button-hero-coverage">Check vehicle coverage</a>
+   <a
+  className="button-ghost"
+  href={WHATSAPP_LINK}
+  target="_blank"
+  rel="noreferrer"
+  data-testid="button-hero-whatsapp"
+>
+  Chat on WhatsApp <ArrowRight size={15} />
+</a>           
             </div>
             <div className="hero-micro reveal reveal-delay-3"><i /> For workshops, traders &amp; vehicle owners</div>
           </div>
