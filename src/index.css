@@ -232,20 +232,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+  margin-right: Autopx;
   border: 2px solid currentColor;
   border-radius: 50%;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
 }
 
 .detail-list li strong {
-  font-weight: 700;
+  font-weight: 550;
 }
 
 .detail-list li {
-  font-weight: 400;
+  font-weight: 300;
 }
