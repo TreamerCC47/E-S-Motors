@@ -230,7 +230,7 @@ function Home() {
           <div className="split-copy reveal">
             <div className="eyebrow">/ Usefull Tip</div>
             <h2>Signs of a<br />bad rack.</h2>
-            <p>A steering rack is the core part of a car steering system. It changes the turning motion of your steering wheel into the side-to-side movement that turns your front wheels</p>
+            <p>A steering rack is the core part of a car steering system. It changes the turning motion of your steering wheel into the side-to-side movement that turns your front wheels. Look out for the following signs which require immediate repair / service: </p>
           <ul className="detail-list">
   <li>
     <span className="warning-icon">!</span>
