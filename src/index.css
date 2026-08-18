@@ -459,7 +459,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand-logo-card {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 22px;
   min-height: 58px;
   padding: 10px 16px;
   border: 1px solid #9db5bb;
@@ -470,16 +470,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand-logo-card img {
   display: block;
   width: auto;
-  height: 3
-  50px;
+  height: 50px;
   max-width: 100px;
   object-fit: contain;
 }
 
 .brand-logo-card span {
   color: #60737a;
-  font: 10px var(--app-font-mono);
-  letter-spacing: 0.04em;
+  font: 15px var(--app-font-mono);
+  letter-spacing: 0.41em;
   text-transform: uppercase;
 }
 

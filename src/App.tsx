@@ -431,12 +431,12 @@ setRequestVehicle('');
   <div className="brand-logos">
     <div className="brand-logo-card">
       <img src="/audi.svg" alt="Audi logo" />
-      <span>Audi coverage</span>
+      <span>Audi</span>
     </div>
 
     <div className="brand-logo-card">
       <img src="/porsche.svg" alt="Porsche logo" />
-      <span>Porsche coverage</span>
+      <span>Porsche</span>
     </div>
   </div>
 </div>
