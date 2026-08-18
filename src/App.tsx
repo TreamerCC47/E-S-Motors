@@ -231,13 +231,32 @@ function Home() {
             <div className="eyebrow">/ Usefull Tip</div>
             <h2>Signs of a<br />bad rack.</h2>
             <p>A steering rack is the core part of a car steering system. It changes the turning motion of your steering wheel into the side-to-side movement that turns your front wheels</p>
-            <ul className="detail-list">
-              <li><Check size={16} /> Loose wheel: A dead spot where the car does not turn right away.</li>
-              <li><Check size={16} /> Hard turning: The wheel feels heavy or tight.</li>
-              <li><Check size={16} /> Fluid leaks: Puddles or wet spots from broken seals.</li>
-              <li><Check size={16} /> Car wandering: The vehicle drifts or is hard to keep straight in a lane.</li>
-              <li><Check size={16} /> Noises: Grinding, clunking, or knocking sounds when turning.</li>
-            </ul>
+          <ul className="detail-list">
+  <li>
+    <span className="warning-icon">!</span>
+    <strong>Loose wheel:</strong> A dead spot where the car does not turn right away.
+  </li>
+
+  <li>
+    <span className="warning-icon">!</span>
+    <strong>Hard turning:</strong> The wheel feels heavy or tight.
+  </li>
+
+  <li>
+    <span className="warning-icon">!</span>
+    <strong>Fluid leaks:</strong> Puddles or wet spots from broken seals.
+  </li>
+
+  <li>
+    <span className="warning-icon">!</span>
+    <strong>Car wandering:</strong> The vehicle drifts or is hard to keep straight in a lane.
+  </li>
+
+  <li>
+    <span className="warning-icon">!</span>
+    <strong>Noises:</strong> Grinding, clunking, or knocking sounds when turning.
+  </li>
+</ul>
           </div>
         </section>
 
