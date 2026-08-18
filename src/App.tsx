@@ -88,7 +88,7 @@ function Home() {
               <a href="#coverage" onClick={() => setMenuOpen(false)} data-testid="mobile-link-coverage">Coverage</a>
               <a href="#workshop" onClick={() => setMenuOpen(false)} data-testid="mobile-link-workshop">Workshop</a>
               <a href="#process" onClick={() => setMenuOpen(false)} data-testid="mobile-link-process">How it works</a>
-              <a className="button-primary" href="#request" onClick={() => setMenuOpen(false)} data-testid="mobile-link-request">Request help <ArrowRight size={15} /></a>
+              <a className="button-primary" href="#request" onClick={() => setMenuOpen(false)} data-testid="mobile-link-request">Request A Service <ArrowRight size={15} /></a>
             </div>
           )}
         </nav>
@@ -97,7 +97,7 @@ function Home() {
       <main id="top">
         <section className="hero" aria-labelledby="hero-title">
           <div className="container-wide hero-content">
-            <div className="eyebrow eyebrow-light reveal">Electronic steering / Audi + Porsche</div>
+            <div className="eyebrow eyebrow-light reveal">Electronic steering </div>
             <h1 className="display reveal reveal-delay-1" id="hero-title">Steering<br /><span>sorted.</span></h1>
             <p className="hero-lead reveal reveal-delay-2">Specialist supply, diagnostics and repair for electronic steering racks in premium German vehicles. Precise work for the people who know the difference.</p>
             <div className="hero-actions reveal reveal-delay-3">
@@ -105,8 +105,7 @@ function Home() {
               <a className="button-ghost" href="#coverage" data-testid="button-hero-coverage">Check vehicle coverage</a>
             </div>
             <div className="hero-micro reveal reveal-delay-3"><i /> For workshops, traders &amp; vehicle owners</div>
-          </div>
-          <div className="hero-side-note">Component-level thinking / Vehicle-level confidence</div>
+         
         </section>
 
         <div className="strip">
@@ -250,7 +249,7 @@ function Home() {
             </div>
             <form className="contact-form reveal reveal-delay-1" onSubmit={submitForm} data-testid="form-contact">
               <div className="form-heading">
-                <h3>Request help</h3>
+                <h3>Request A Service</h3>
                 <span>01 / 04</span>
               </div>
               <div className="form-grid">
@@ -310,7 +309,7 @@ function Home() {
               <a href="#request" data-testid="footer-link-request">Request help</a>
             </div>
           </div>
-          <div className="footer-bottom"><span>© E&amp;S Motors</span><span>Precision automotive engineering, plainly explained.</span></div>
+          <div className="footer-bottom"><span>© E&amp;S Motors Pty Ltd. We Are Available through out South Africa</span><span>Precision automotive engineering, plainly explained.</span></div>
         </div>
       </footer>
     </div>
