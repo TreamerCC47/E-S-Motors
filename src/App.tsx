@@ -97,9 +97,9 @@ function Home() {
       <main id="top">
         <section className="hero" aria-labelledby="hero-title">
           <div className="container-wide hero-content">
-            <div className="eyebrow eyebrow-light reveal">Electronic steering / Audi + Porsche</div>
+            <div className="eyebrow eyebrow-light reveal">Electronic steering </div>
             <h1 className="display reveal reveal-delay-1" id="hero-title">Steering<br /><span>sorted.</span></h1>
-            <p className="hero-lead reveal reveal-delay-2">Specialist supply, diagnostics and repair for electronic steering racks in premium German vehicles. Precise work for the people who know the difference.</p>
+            <p className="hero-lead reveal reveal-delay-2">Specialist supply, diagnostics and repair for electronic steering racks in selected German vehicles. Precise work for the people who know the difference.</p>
             <div className="hero-actions reveal reveal-delay-3">
               <a className="button-primary" href="#request" data-testid="button-hero-request">Tell us what’s wrong <ArrowDownRight size={16} /></a>
               <a className="button-ghost" href="#coverage" data-testid="button-hero-coverage">Check vehicle coverage</a>
@@ -119,13 +119,13 @@ function Home() {
         <section className="section-pad intro" id="expertise">
           <div className="container-wide intro-grid">
             <div className="reveal">
-              <div className="eyebrow">01 / The specialist difference</div>
+              <div className="eyebrow">/ The specialist difference</div>
               <h2 className="display">Keep the<br />signal clear.</h2>
               <div className="blue-rule" />
             </div>
             <div className="reveal reveal-delay-1">
               <p className="intro-copy">Electronic steering faults rarely announce themselves with a simple answer. A warning light can point to the rack, its control unit, the motor, a sensor — or the conversation between them.</p>
-              <p className="intro-copy"><strong>E&amp;S Motors focuses on that conversation.</strong> We help identify the right route before a costly part is fitted, then supply or repair the steering rack with the care premium vehicles demand.</p>
+              <p className="intro-copy"><strong>E&amp;S Motors focuses on that conversation.</strong> We help identify the right route before a costly part is fitted, then supply or repair the steering rack with the care your vehicles demand.</p>
               <div className="signature-line">Technical expertise / plainly explained</div>
             </div>
           </div>
@@ -141,12 +141,34 @@ function Home() {
             </div>
           </div>
         </section>
+        <section className="section-pad workshop-gallery" id="workshop">
+          <div className="container-wide">
+            <div className="gallery-header reveal">
+              <div>
+                <div className="eyebrow">/ In the workshop</div>
+                <h2 className="display">The work is<br /><span>real.</span></h2>
+              </div>
+              <p>From racks on the shelf to electronic units on the bench, this is the kind of component-level work E&amp;S Motors handles every day.</p>
+            </div>
+            <div className="gallery-grid">
+              {workshopImages.map((image, index) => (
+                <figure className={`gallery-item reveal ${image.wide ? 'gallery-item-wide' : ''} ${index > 0 ? `reveal-delay-${Math.min(index, 3)}` : ''}`} key={image.src}>
+                  <img src={image.src} alt={image.alt} loading={index === 0 ? 'eager' : 'lazy'} />
+                  <figcaption>
+                    <span>{image.label}</span>
+                    <span className="gallery-index">{String(index + 1).padStart(2, '0')}</span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="section-pad dark-section process" id="process">
           <div className="container-wide">
             <div className="process-header reveal">
               <div>
-                <div className="eyebrow">02 / The route to resolution</div>
+                <div className="eyebrow">/ The route to resolution</div>
                 <h2 className="display">No guessing.<br />Just next steps.</h2>
               </div>
               <p>Whether you are managing a workshop bay, preparing a vehicle for sale or trying to get your own car back on the road, the first step is a useful conversation.</p>
@@ -180,7 +202,7 @@ function Home() {
           <div className="container-wide">
             <div className="coverage-top reveal">
               <div>
-                <div className="eyebrow">03 / Vehicle coverage</div>
+                <div className="eyebrow">/ Vehicle coverage</div>
                 <h2 className="display">Built around<br />the platform.</h2>
               </div>
               <p>A focused range means deeper familiarity with the systems, symptoms and steering racks found across these Audi and Porsche vehicles.</p>
@@ -200,35 +222,13 @@ function Home() {
           </div>
         </section>
 
-        <section className="section-pad workshop-gallery" id="workshop">
-          <div className="container-wide">
-            <div className="gallery-header reveal">
-              <div>
-                <div className="eyebrow">04 / In the workshop</div>
-                <h2 className="display">The work is<br /><span>real.</span></h2>
-              </div>
-              <p>From racks on the shelf to electronic units on the bench, this is the kind of component-level work E&amp;S Motors handles every day.</p>
-            </div>
-            <div className="gallery-grid">
-              {workshopImages.map((image, index) => (
-                <figure className={`gallery-item reveal ${image.wide ? 'gallery-item-wide' : ''} ${index > 0 ? `reveal-delay-${Math.min(index, 3)}` : ''}`} key={image.src}>
-                  <img src={image.src} alt={image.alt} loading={index === 0 ? 'eager' : 'lazy'} />
-                  <figcaption>
-                    <span>{image.label}</span>
-                    <span className="gallery-index">{String(index + 1).padStart(2, '0')}</span>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        
         <section className="split-section" aria-label="Repair and replacement">
           <div className="split-image">
             <div className="image-caption">The rack is the message / We read it carefully</div>
           </div>
           <div className="split-copy reveal">
-            <div className="eyebrow">04 / The work itself</div>
+            <div className="eyebrow">/ The work itself</div>
             <h2>Repair what<br />makes sense.</h2>
             <p>Replacement is not always the answer. We look at the evidence, the vehicle and the job in front of you — then make the route clear.</p>
             <ul className="detail-list">
@@ -243,7 +243,7 @@ function Home() {
         <section className="section-pad contact" id="request">
           <div className="container-wide contact-grid">
             <div className="contact-intro reveal">
-              <div className="eyebrow">05 / Start a conversation</div>
+              <div className="eyebrow">/ Start a conversation</div>
               <h2 className="display">Give us<br />the detail.</h2>
               <p>Tell us what you know, even if it is only the vehicle model and the warning message. We will use the detail to point you towards the most useful next step.</p>
               <button className="button-ghost" onClick={() => scrollTo('top')} data-testid="button-back-to-top">Back to the top <ArrowDownRight size={15} style={{ transform: 'rotate(225deg)' }} /></button>
@@ -310,7 +310,7 @@ function Home() {
               <a href="#request" data-testid="footer-link-request">Request help</a>
             </div>
           </div>
-          <div className="footer-bottom"><span>© E&amp;S Motors Pty Ltd. We Are Available Across South Africa</span><span>Precision automotive engineering, plainly explained.</span></div>
+          <div className="footer-bottom"><span>© E&amp;S Motors Pty Ltd. We Are Available Across South Africa.</span><span>Precision automotive engineering, plainly explained.</span></div>
         </div>
       </footer>
     </div>
