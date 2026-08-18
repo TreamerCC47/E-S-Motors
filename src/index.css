@@ -232,6 +232,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .detail-list {
   list-style: none;
+  margin-top: 15px;
   padding: 0;
   margin: 1;
 }
