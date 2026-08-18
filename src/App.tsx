@@ -12,6 +12,7 @@ import NotFound from '@/pages/not-found';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 
 const models = ['A4', 'A5', 'A6', 'A7', 'A8', 'Q5', 'Q7', 'Porsche'];
+const WHATSAPP_NUMBER = '27739502924';
 
 const workshopImages = [
   { src: workshopShelves, alt: 'Electronic steering racks arranged on workshop shelving', label: 'Racks on hand / ready to identify', wide: true },
@@ -53,11 +54,39 @@ function Home() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const submitForm = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmitted(true);
-    event.currentTarget.reset();
-  };
+const submitForm = (event: FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+
+  const name = String(formData.get('name') ?? '').trim();
+  const email = String(formData.get('email') ?? '').trim();
+  const vehicle = String(formData.get('vehicle') ?? '').trim();
+  const registration = String(formData.get('registration') ?? '').trim();
+  const route = String(formData.get('route') ?? '').trim();
+  const message = String(formData.get('message') ?? '').trim();
+
+  const whatsappMessage = [
+    'Hello E&S Motors, I need help with an electronic steering rack.',
+    '',
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Vehicle: ${vehicle}`,
+    `Registration / year: ${registration || 'Not provided'}`,
+    `Request type: ${route || 'Not specified'}`,
+    '',
+    'What is happening:',
+    message || 'No additional symptoms provided.',
+  ].join('\n');
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+  setSubmitted(true);
+  form.reset();
+};
 
   return (
     <div className="site-shell">
@@ -308,7 +337,12 @@ function Home() {
               <button className="button-primary form-submit" type="submit" data-testid="button-submit-request">
                 {submitted ? <>Request noted <CircleCheck size={16} /></> : <>Send request <Send size={15} /> </>}
               </button>
-              {submitted && <div className="form-status" role="status" data-testid="status-form-success"><CircleCheck size={17} /> Thanks — your request has been captured locally. In a live setup, this is where a specialist reply would begin.</div>}
+             {submitted && (
+  <div className="form-status" role="status" data-testid="status-form-success">
+    <CircleCheck size={17} />
+    WhatsApp should now be open with your enquiry details ready to send.
+  </div>
+)}
             </form>
           </div>
         </section>
