@@ -11,7 +11,146 @@ import { ErrorBoundary } from '@/components/error-boundary';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 
-const models = ['A4', 'A5', 'A6', 'A7', 'A8', 'Q5', 'Q7', 'Porsche'];
+const vehicleDetails = {
+  A4: {
+    title: 'Audi A4',
+    note: 'Audi platform',
+    generations: 'B8 (8K) / B9 (8W)',
+    rackInfo:
+      'Electronic power steering rack. Exact compatibility must be confirmed from the rack label, vehicle year, drivetrain and VIN.',
+    symptoms: [
+      'Steering warning light',
+      'Heavy or inconsistent steering',
+      'Clunking or knocking while turning',
+    ],
+    options: [
+      'Diagnostic support',
+      'Rack repair assessment',
+      'Replacement rack sourcing',
+    ],
+  },
+  A5: {
+    title: 'Audi A5',
+    note: 'Audi platform',
+    generations: '8T / 8F / F5',
+    rackInfo:
+      'Electronic power steering rack. Exact compatibility must be confirmed from the rack label, vehicle year, drivetrain and VIN.',
+    symptoms: [
+      'Steering assistance warning',
+      'Uneven steering feel',
+      'Noise or play from the steering system',
+    ],
+    options: [
+      'Diagnostic support',
+      'Rack repair assessment',
+      'Replacement rack sourcing',
+    ],
+  },
+  A6: {
+    title: 'Audi A6',
+    note: 'Audi platform',
+    generations: 'C7 (4G) / C8 (4A)',
+    rackInfo:
+      'Electronic power steering rack. Exact compatibility must be confirmed from the rack label, vehicle year, drivetrain and VIN.',
+    symptoms: [
+      'Electronic steering warning',
+      'Heavy steering or reduced assistance',
+      'Vehicle wandering or poor steering response',
+    ],
+    options: [
+      'Diagnostic support',
+      'Rack repair assessment',
+      'Replacement rack sourcing',
+    ],
+  },
+  A7: {
+    title: 'Audi A7',
+    note: 'Audi platform',
+    generations: '4G / 4K',
+    rackInfo:
+      'Electronic power steering rack. Exact compatibility must be confirmed from the rack label, vehicle year, drivetrain and VIN.',
+    symptoms: [
+      'Steering system warning',
+      'Intermittent loss of assistance',
+      'Clunking, knocking or unusual steering noise',
+    ],
+    options: [
+      'Diagnostic support',
+      'Rack repair assessment',
+      'Replacement rack sourcing',
+    ],
+  },
+  A8: {
+    title: 'Audi A8',
+    note: 'Audi platform',
+    generations: 'D4 (4H) / D5 (4N)',
+    rackInfo:
+      'Electronic power steering rack. Exact compatibility must be confirmed from the rack label, vehicle year, drivetrain and VIN.',
+    symptoms: [
+      'Steering assistance warning',
+      'Heavy or delayed steering response',
+      'Steering instability or unusual feedback',
+    ],
+    options: [
+      'Diagnostic support',
+      'Rack repair assessment',
+      'Replacement rack sourcing',
+    ],
+  },
+  Q5: {
+    title: 'Audi Q5',
+    note: 'Audi platform',
+    generations: '8R / FY',
+    rackInfo:
+      'Electronic power steering rack. Exact compatibility must be confirmed from the rack label, vehicle year, drivetrain and VIN.',
+    symptoms: [
+      'Electronic steering warning',
+      'Heavy steering at low speed',
+      'Noise or vibration while turning',
+    ],
+    options: [
+      'Diagnostic support',
+      'Rack repair assessment',
+      'Replacement rack sourcing',
+    ],
+  },
+  Q7: {
+    title: 'Audi Q7',
+    note: 'Audi platform',
+    generations: '4M and selected variants',
+    rackInfo:
+      'Electronic power steering rack. Exact compatibility must be confirmed from the rack label, vehicle year, drivetrain and VIN.',
+    symptoms: [
+      'Steering system warning',
+      'Reduced or intermittent steering assistance',
+      'Vehicle pulling or wandering',
+    ],
+    options: [
+      'Diagnostic support',
+      'Rack repair assessment',
+      'Replacement rack sourcing',
+    ],
+  },
+  Porsche: {
+    title: 'Porsche',
+    note: 'Selected models',
+    generations: 'Selected Macan, Cayenne and Panamera generations',
+    rackInfo:
+      'Electronic steering rack support is available for selected Porsche applications. Exact compatibility must be confirmed from the rack label, vehicle details and VIN.',
+    symptoms: [
+      'Power steering warning',
+      'Heavy or inconsistent steering',
+      'Unusual noises or steering play',
+    ],
+    options: [
+      'Diagnostic support',
+      'Rack repair assessment',
+      'Replacement rack sourcing',
+    ],
+  },
+} as const;
+
+const models = Object.keys(vehicleDetails) as Array<keyof typeof vehicleDetails>;
 const WHATSAPP_NUMBER = '27739502924';
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   'Hello E&S Motors, I would like help with an electronic steering rack.',
@@ -54,8 +193,12 @@ function useReveal() {
 
 function Home() {
   useReveal();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+ const [menuOpen, setMenuOpen] = useState(false);
+const [submitted, setSubmitted] = useState(false);
+const [selectedModel, setSelectedModel] =
+  useState<keyof typeof vehicleDetails>('A4');
+const [requestVehicle, setRequestVehicle] = useState('');
+const selectedVehicle = vehicleDetails[selectedModel];
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
@@ -93,7 +236,8 @@ const submitForm = (event: FormEvent<HTMLFormElement>) => {
   window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
   setSubmitted(true);
-  form.reset();
+form.reset();
+setRequestVehicle('');
 };
 
   return (
@@ -278,14 +422,95 @@ const submitForm = (event: FormEvent<HTMLFormElement>) => {
               </div>
               <p>A focused range means deeper familiarity with the systems, symptoms and steering racks found across these Audi and Porsche vehicles.</p>
             </div>
-            <div className="model-map reveal reveal-delay-1">
-              {models.map((model) => (
-                <div className="model-cell" key={model} data-testid={`card-coverage-${model.toLowerCase()}`}>
-                  <div className="model-name">{model}</div>
-                  <div className="model-note">{model === 'Porsche' ? 'selected models' : 'Audi platform'}</div>
-                </div>
-              ))}
-            </div>
+         <div
+  className="model-map reveal reveal-delay-1"
+  role="tablist"
+  aria-label="Select a vehicle category"
+>
+  {models.map((model) => {
+    const vehicle = vehicleDetails[model];
+    const isSelected = selectedModel === model;
+
+    return (
+      <button
+        className={`model-cell ${isSelected ? 'is-selected' : ''}`}
+        key={model}
+        type="button"
+        role="tab"
+        aria-selected={isSelected}
+        aria-controls="vehicle-coverage-details"
+        data-testid={`card-coverage-${model.toLowerCase()}`}
+        onClick={() => setSelectedModel(model)}
+      >
+        <div className="model-name">{model}</div>
+        <div className="model-note">{vehicle.note}</div>
+      </button>
+    );
+  })}
+</div>
+
+<div
+  className="vehicle-detail"
+  id="vehicle-coverage-details"
+  role="tabpanel"
+  aria-live="polite"
+>
+  <div className="vehicle-detail-heading">
+    <div>
+      <div className="eyebrow eyebrow-light">/ Selected coverage</div>
+      <h3>{selectedVehicle.title}</h3>
+    </div>
+    <span className="vehicle-detail-status">{selectedVehicle.note}</span>
+  </div>
+
+  <div className="vehicle-detail-grid">
+    <div className="vehicle-detail-block">
+      <div className="vehicle-detail-label">Model generations</div>
+      <p>{selectedVehicle.generations}</p>
+    </div>
+
+    <div className="vehicle-detail-block">
+      <div className="vehicle-detail-label">Compatible rack information</div>
+      <p>{selectedVehicle.rackInfo}</p>
+    </div>
+
+    <div className="vehicle-detail-block">
+      <div className="vehicle-detail-label">Common symptoms</div>
+      <ul>
+        {selectedVehicle.symptoms.map((symptom) => (
+          <li key={symptom}>{symptom}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div className="vehicle-detail-block">
+      <div className="vehicle-detail-label">Repair / replacement options</div>
+      <ul>
+        {selectedVehicle.options.map((option) => (
+          <li key={option}>{option}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div className="vehicle-detail-actions">
+    <button
+      className="button-primary"
+      type="button"
+      onClick={() => {
+        setRequestVehicle(selectedVehicle.title);
+        scrollTo('request');
+      }}
+      data-testid="button-vehicle-assistance"
+    >
+      Request assistance <ArrowRight size={15} />
+    </button>
+
+    <span>
+      Exact fitment is confirmed before repair or supply.
+    </span>
+  </div>
+</div>
             <div className="coverage-foot reveal reveal-delay-2">
               <span>Not sure if your vehicle is covered?</span>
               <a href="#request" data-testid="link-coverage-request">Send the details and we’ll help you work it out <ArrowRight size={14} /></a>
@@ -355,7 +580,15 @@ const submitForm = (event: FormEvent<HTMLFormElement>) => {
                 </div>
                 <div className="field">
                   <label htmlFor="vehicle">Vehicle</label>
-                  <input id="vehicle" name="vehicle" required placeholder="For example, Audi A6" data-testid="input-vehicle" />
+                  <input
+  id="vehicle"
+  name="vehicle"
+  required
+  value={requestVehicle}
+  onChange={(event) => setRequestVehicle(event.target.value)}
+  placeholder="For example, Audi A6"
+  data-testid="input-vehicle"
+/>
                 </div>
                 <div className="field">
                   <label htmlFor="registration">Registration / year</label>
