@@ -198,12 +198,18 @@ const [submitted, setSubmitted] = useState(false);
 const [selectedModel, setSelectedModel] =
   useState<keyof typeof vehicleDetails>('A4');
 const [requestVehicle, setRequestVehicle] = useState('');
+const [requestType, setRequestType] = useState('');
 const selectedVehicle = vehicleDetails[selectedModel];
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
+  const openQuoteForm = () => {
+  setRequestVehicle(selectedVehicle.title);
+  setRequestType('Stock electronic steering rack quote');
+  scrollTo('request');
+};
 
 const submitForm = (event: FormEvent<HTMLFormElement>) => {
   event.preventDefault();
@@ -238,6 +244,7 @@ const submitForm = (event: FormEvent<HTMLFormElement>) => {
   setSubmitted(true);
 form.reset();
 setRequestVehicle('');
+setRequestType('');
 };
 
   return (
@@ -259,12 +266,11 @@ setRequestVehicle('');
           </div>
           <a
   className="nav-cta"
-  href={WHATSAPP_LINK}
-  target="_blank"
-  rel="noreferrer"
-  data-testid="link-whatsapp"
+  href="#request"
+  onClick={openQuoteForm}
+  data-testid="link-request-quote"
 >
-  WhatsApp us <ArrowRight size={15} />
+  Request a quote <ArrowRight size={15} />
 </a>
           <button className="mobile-toggle" onClick={() => setMenuOpen((value) => !value)} aria-label={menuOpen ? 'Close menu' : 'Open menu'} data-testid="button-mobile-menu">
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -276,14 +282,14 @@ setRequestVehicle('');
               <a href="#workshop" onClick={() => setMenuOpen(false)} data-testid="mobile-link-workshop">Workshop</a>
               <a href="#process" onClick={() => setMenuOpen(false)} data-testid="mobile-link-process">How it works</a>
               <>
-  <a
-    className="button-primary"
-    href="#request"
-    onClick={() => setMenuOpen(false)}
-    data-testid="mobile-link-request"
-  >
-    Request help <ArrowRight size={15} />
-  </a>
+ <a
+  className="button-primary"
+  href="#request"
+  onClick={openQuoteForm}
+  data-testid="mobile-link-quote"
+>
+  Request a quote <ArrowRight size={15} />
+</a>
   <a
     className="button-ghost"
     href={WHATSAPP_LINK}
@@ -307,7 +313,14 @@ setRequestVehicle('');
             <h1 className="display reveal reveal-delay-1" id="hero-title">Steering<br /><span>sorted.</span></h1>
             <p className="hero-lead reveal reveal-delay-2">Specialist supply, diagnostics and repair for electronic steering racks in selected German vehicles. Precise work for the people who know the difference.</p>
             <div className="hero-actions reveal reveal-delay-3">
-              <a className="button-primary" href="#request" data-testid="button-hero-request">Tell us what’s wrong <ArrowDownRight size={16} /></a>
+              <a
+  className="button-primary"
+  href="#request"
+  onClick={openQuoteForm}
+  data-testid="button-hero-quote"
+>
+  Request a quote <ArrowDownRight size={16} />
+</a>
               <a className="button-ghost" href="#coverage" data-testid="button-hero-coverage">Check vehicle coverage</a>
    <a
   className="button-ghost"
@@ -579,12 +592,15 @@ setRequestVehicle('');
             <div className="contact-intro reveal">
               <div className="eyebrow">/ Start a conversation</div>
               <h2 className="display">Give us<br />the detail.</h2>
-              <p>Tell us what you know, even if it is only the vehicle model and the warning message. We will use the detail to point you towards the most useful next step.</p>
+              <p>
+  Whether you need a stock steering rack, a repair assessment or diagnostic
+  support, send us the vehicle details and we will help identify the right route.
+</p>
               <button className="button-ghost" onClick={() => scrollTo('top')} data-testid="button-back-to-top">Back to the top <ArrowDownRight size={15} style={{ transform: 'rotate(225deg)' }} /></button>
             </div>
             <form className="contact-form reveal reveal-delay-1" onSubmit={submitForm} data-testid="form-contact">
               <div className="form-heading">
-                <h3>Request help</h3>
+                <h3>Request help or a quote</h3>
                 <span>01 / 04</span>
               </div>
               <div className="form-grid">
@@ -614,13 +630,30 @@ setRequestVehicle('');
                 </div>
                 <div className="field full">
                   <label htmlFor="route">What do you need?</label>
-                  <select id="route" name="route" defaultValue="" data-testid="select-route">
-                    <option value="" disabled>Select the closest route</option>
-                    <option>Diagnostic support</option>
-                    <option>Electronic steering rack repair</option>
-                    <option>Replacement steering rack</option>
-                    <option>Not sure yet</option>
-                  </select>
+                 <select
+  id="route"
+  name="route"
+  required
+  value={requestType}
+  onChange={(event) => setRequestType(event.target.value)}
+  data-testid="select-route"
+>
+  <option value="" disabled>
+    Select the closest route
+  </option>
+  <option value="Diagnostic support">
+    Diagnostic support
+  </option>
+  <option value="Electronic steering rack repair">
+    Repair my existing steering rack
+  </option>
+  <option value="Stock electronic steering rack quote">
+    Quote for a stock steering rack
+  </option>
+  <option value="Not sure yet">
+    Not sure yet
+  </option>
+</select>
                 </div>
                 <div className="field full">
                   <label htmlFor="message">What is happening?</label>
