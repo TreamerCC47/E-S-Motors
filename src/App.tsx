@@ -252,7 +252,7 @@ setRequestType('');
       <header className="nav-wrap">
         <nav className="nav container-wide" aria-label="Main navigation">
           <a className="brand" href="#top" onClick={() => setMenuOpen(false)} data-testid="link-brand">
-            <span className="brand-mark">E&amp;S</span>
+            <img className="brand-logo" src="/logo.svg" alt="E&S Motors" />
             <span className="brand-copy">
               <span className="brand-name">E&amp;S Motors</span>
               <span className="brand-sub">Steering rack specialists</span>
@@ -679,7 +679,7 @@ setRequestType('');
           <div className="footer-grid">
             <div>
               <a className="brand" href="#top" data-testid="link-footer-brand">
-                <span className="brand-mark">E&amp;S</span>
+                <img className="brand-logo" src="/logo.svg" alt="E&S Motors" />
                 <span className="brand-copy"><span className="brand-name">E&amp;S Motors</span><span className="brand-sub">Steering rack specialists</span></span>
               </a>
               <p className="footer-note">
