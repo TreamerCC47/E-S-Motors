@@ -55,7 +55,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
 .brand-logo {
   width: 92px;
-  height: 96px;
+  height: 104px;
   object-fit: contain;
   display: block;
   background: transparent;
