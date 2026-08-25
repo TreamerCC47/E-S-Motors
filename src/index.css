@@ -54,11 +54,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .nav { display: flex; height: 88px; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.18); }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
 .brand-logo {
-  display: block;
-  width: 58px;
-  height: 42px;
+  width: 86px;
+  height: 86px;
   object-fit: contain;
-  object-position: center;
+  display: block;
+  background: transparent;
 }
 .brand-copy { display: grid; gap: 2px; }
 .brand-name { font: 700 20px/1 var(--app-font-serif); letter-spacing: .04em; }
