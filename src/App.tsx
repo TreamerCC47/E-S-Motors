@@ -158,7 +158,7 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponen
 const PUBLIC_PHONE = '+27 73 950 2924';
 const PHONE_LINK = 'tel:+27739502924';
 const PUBLIC_EMAIL = 'Sakhilembanjwa049@gmail.com';
-const SERVICE_AREA = 'Nationwide across South Africa';
+const SERVICE_AREA = 'Mobile service across South Africa';
 const BUSINESS_HOURS = '08:00–18:00';
 const FACEBOOK_LINK = 'https://www.facebook.com/share/1ERqT4dgj3/';
 const workshopImages = [
@@ -338,7 +338,7 @@ setRequestType('');
   Chat on WhatsApp <ArrowRight size={15} />
 </a>           
             </div>
-            <div className="hero-micro reveal reveal-delay-3"><i /> For workshops, traders &amp; vehicle owners</div>
+            <div className="hero-micro reveal reveal-delay-3"><i /> Mobile service / We come to your location across South Africa</div>
           </div>
           
         </section>
@@ -593,7 +593,7 @@ setRequestType('');
       <details className="faq-item">
         <summary>Do you assist customers outside your local area?</summary>
         <p>
-          E&amp;S Motors assists customers across South Africa. Send your vehicle and rack details first so the correct next step can be confirmed.
+          E&amp;S Motors provides mobile assistance across South Africa and can come to your location. Send your vehicle and rack details first so the correct next step can be confirmed.
         </p>
       </details>
 
@@ -648,11 +648,19 @@ setRequestType('');
             <div className="contact-intro reveal">
               <div className="eyebrow">/ Start a conversation</div>
               <h2 className="display">Give us<br />the detail.</h2>
-              <p>
+             <p>
   Whether you need a stock steering rack, a repair assessment or diagnostic
   support, send us the vehicle details and we will help identify the right route.
   The more detail you provide, the faster we can narrow down the correct option.
 </p>
+
+<div className="mobile-service-callout">
+  <strong>Mobile service across South Africa.</strong>
+  <span>
+    We can come to your location for mobile assistance. Include the vehicle's
+    location in your enquiry so we can advise on the right next step.
+  </span>
+</div>
 
 <ul className="request-checklist">
   <li>

@@ -602,3 +602,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font: 11px var(--app-font-mono);
   letter-spacing: .08em;
 }
+.mobile-service-callout {
+  display: grid;
+  gap: 8px;
+  max-width: 430px;
+  margin: 0 0 30px;
+  padding: 18px 20px;
+  border-left: 3px solid #1d6e94;
+  background: rgba(128, 217, 227, .1);
+}
+
+.mobile-service-callout strong {
+  color: #17303c;
+  font: 600 15px/1.4 var(--app-font-sans);
+}
+
+.mobile-service-callout span {
+  color: #60737a;
+  font-size: 14px;
+  line-height: 1.65;
+}
