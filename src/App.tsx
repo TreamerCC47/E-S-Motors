@@ -1,6 +1,5 @@
 import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
 import { ArrowDownRight, ArrowRight, Check, CircleCheck, Menu, Send, X } from 'lucide-react';
-import { Analytics } from '@vercel/analytics/react';
 import workshopShelves from './assets/workshop-shelves.jpg';
 import electronicsStock from './assets/electronics-stock.jpg';
 import rackOne from './assets/rack-one.jpg';
@@ -737,7 +736,6 @@ function App() {
   return (
     <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <Router />
-      <Analytics />
     </WouterRouter>
   );
 }
