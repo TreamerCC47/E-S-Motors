@@ -353,7 +353,9 @@ setRequestType('');
             </div>
             <div className="reveal reveal-delay-1">
               <p className="intro-copy">Electronic steering faults rarely announce themselves with a simple answer. A warning light can point to the rack, its control unit, the motor, a sensor — or the conversation between them.</p>
-              <p className="intro-copy"><strong>E&amp;S Motors focuses on that conversation.</strong> We help identify the right route before a costly part is fitted, then supply or repair the steering rack with the care your vehicles demand.</p>
+             <p className="intro-copy"><strong>E&amp;S Motors focuses on that conversation.</strong> We help identify the right route before a costly part is fitted, then supply or repair the steering rack with the care your vehicles demand.</p>
+
+<p className="intro-copy">Some customers write the name as <strong>E and S Motors</strong> or <strong>EandS Motors</strong>; it is the same specialist team.</p>
               <div className="signature-line">Technical expertise / plainly explained</div>
             </div>
           </div>
