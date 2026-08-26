@@ -222,6 +222,7 @@ const email = String(formData.get('email') ?? '').trim();
 const phone = String(formData.get('phone') ?? '').trim();
 const vehicle = String(formData.get('vehicle') ?? '').trim();
 const registration = String(formData.get('registration') ?? '').trim();
+const location = String(formData.get('location') ?? '').trim();
 const reference = String(formData.get('reference') ?? '').trim();
 const route = String(formData.get('route') ?? '').trim();
 const message = String(formData.get('message') ?? '').trim();
@@ -233,8 +234,9 @@ const message = String(formData.get('message') ?? '').trim();
   `Phone / WhatsApp: ${phone}`,
   `Email: ${email || 'Not provided'}`,
   `Vehicle: ${vehicle}`,
-  `Registration / year: ${registration || 'Not provided'}`,
-  `VIN / rack part number: ${reference || 'Not provided'}`,
+`Registration / year: ${registration || 'Not provided'}`,
+`Vehicle / rack location: ${location}`,
+`VIN / rack part number: ${reference || 'Not provided'}`,
   `Request type: ${route || 'Not specified'}`,
   '',
   'What is happening:',
@@ -661,6 +663,27 @@ setRequestType('');
     location in your enquiry so we can advise on the right next step.
   </span>
 </div>
+<div className="contact-direct">
+  <div className="contact-direct-label">Need a faster answer?</div>
+
+  <div className="contact-direct-actions">
+    <a
+      className="contact-direct-link contact-direct-link-primary"
+      href={WHATSAPP_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      WhatsApp E&amp;S Motors <ArrowRight size={15} />
+    </a>
+
+    <a
+      className="contact-direct-link"
+      href={PHONE_LINK}
+    >
+      Call {PUBLIC_PHONE} <ArrowRight size={15} />
+    </a>
+  </div>
+</div>
 
 <ul className="request-checklist">
   <li>
@@ -675,10 +698,14 @@ setRequestType('');
     <span>03</span>
     Steering-rack part number, if available
   </li>
-  <li>
-    <span>04</span>
-    Warning lights and steering symptoms
-  </li>
+ <li>
+  <span>04</span>
+  City, town or area where the vehicle is located
+</li>
+<li>
+  <span>05</span>
+  Warning lights and steering symptoms
+</li>
 </ul>
               <button className="button-ghost" onClick={() => scrollTo('top')} data-testid="button-back-to-top">Back to the top <ArrowDownRight size={15} style={{ transform: 'rotate(225deg)' }} /></button>
             </div>
@@ -719,8 +746,24 @@ setRequestType('');
 </div>
 
 <div className="field">
+  <label htmlFor="location">Vehicle / rack location</label>
+  <input
+    id="location"
+    name="location"
+    required
+    placeholder="City, town or area"
+    data-testid="input-location"
+  />
+</div>
+
+<div className="field">
   <label htmlFor="reference">VIN / rack part number</label>
-  <input id="reference" name="reference" placeholder="Optional but helpful" data-testid="input-reference" />
+  <input
+    id="reference"
+    name="reference"
+    placeholder="Optional but helpful"
+    data-testid="input-reference"
+  />
 </div>
                 <div className="field full">
                   <label htmlFor="route">What do you need?</label>

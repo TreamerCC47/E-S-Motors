@@ -622,3 +622,64 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-size: 14px;
   line-height: 1.65;
 }
+.contact-direct {
+  max-width: 500px;
+  margin: 0 0 30px;
+  padding: 20px;
+  border: 1px solid #c4d5d9;
+  background: #f7fbfb;
+}
+
+.contact-direct-label {
+  color: #17303c;
+  font: 600 15px/1.4 var(--app-font-sans);
+}
+
+.contact-direct-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.contact-direct-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 45px;
+  padding: 0 15px;
+  border: 1px solid #9db5bb;
+  color: #17303c;
+  text-decoration: none;
+  font: 700 10px var(--app-font-mono);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+
+.contact-direct-link:hover {
+  background: #dcebef;
+  transform: translateY(-2px);
+}
+
+.contact-direct-link-primary {
+  border-color: #122630;
+  background: #122630;
+  color: #eaf7f7;
+}
+
+.contact-direct-link-primary:hover {
+  background: #1d4a5b;
+  color: #ffffff;
+}
+
+@media (max-width: 560px) {
+  .contact-direct-actions {
+    display: grid;
+  }
+
+  .contact-direct-link {
+    width: 100%;
+  }
+}
