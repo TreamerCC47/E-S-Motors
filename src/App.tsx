@@ -309,9 +309,9 @@ setRequestType('');
       <main id="top">
         <section className="hero" aria-labelledby="hero-title">
           <div className="container-wide hero-content">
-            <div className="eyebrow eyebrow-light reveal">Electronic steering </div>
-            <h1 className="display reveal reveal-delay-1" id="hero-title">Steering<br /><span>sorted.</span></h1>
-            <p className="hero-lead reveal reveal-delay-2">Specialist supply, diagnostics and repair for electronic steering racks in selected German vehicles. Precise work for the people who know the difference.</p>
+           <div className="eyebrow eyebrow-light reveal">E&amp;S Motors / Electronic steering specialists</div>
+<h1 className="display reveal reveal-delay-1" id="hero-title">Steering<br /><span>sorted.</span></h1>
+<p className="hero-lead reveal reveal-delay-2">E&amp;S Motors specialises in electronic steering rack diagnostics, repair and supply for selected Audi and Porsche vehicles across South Africa. Send your vehicle details and we’ll help confirm the right route.</p>
             <div className="hero-actions reveal reveal-delay-3">
               <a
   className="button-primary"
@@ -319,7 +319,7 @@ setRequestType('');
   onClick={openQuoteForm}
   data-testid="button-hero-quote"
 >
-  Request a quote <ArrowDownRight size={16} />
+  Request help or a quote <ArrowDownRight size={16} />
 </a>
               <a className="button-ghost" href="#coverage" data-testid="button-hero-coverage">Check vehicle coverage</a>
    <a
