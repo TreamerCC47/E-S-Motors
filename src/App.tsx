@@ -217,25 +217,29 @@ const submitForm = (event: FormEvent<HTMLFormElement>) => {
   const form = event.currentTarget;
   const formData = new FormData(form);
 
-  const name = String(formData.get('name') ?? '').trim();
-  const email = String(formData.get('email') ?? '').trim();
-  const vehicle = String(formData.get('vehicle') ?? '').trim();
-  const registration = String(formData.get('registration') ?? '').trim();
-  const route = String(formData.get('route') ?? '').trim();
-  const message = String(formData.get('message') ?? '').trim();
+ const name = String(formData.get('name') ?? '').trim();
+const email = String(formData.get('email') ?? '').trim();
+const phone = String(formData.get('phone') ?? '').trim();
+const vehicle = String(formData.get('vehicle') ?? '').trim();
+const registration = String(formData.get('registration') ?? '').trim();
+const reference = String(formData.get('reference') ?? '').trim();
+const route = String(formData.get('route') ?? '').trim();
+const message = String(formData.get('message') ?? '').trim();
 
-  const whatsappMessage = [
-    'Hello E&S Motors, I need help with an electronic steering rack.',
-    '',
-    `Name: ${name}`,
-    `Email: ${email}`,
-    `Vehicle: ${vehicle}`,
-    `Registration / year: ${registration || 'Not provided'}`,
-    `Request type: ${route || 'Not specified'}`,
-    '',
-    'What is happening:',
-    message || 'No additional symptoms provided.',
-  ].join('\n');
+ const whatsappMessage = [
+  'Hello E&S Motors, I need help with an electronic steering rack.',
+  '',
+  `Name: ${name}`,
+  `Phone / WhatsApp: ${phone}`,
+  `Email: ${email || 'Not provided'}`,
+  `Vehicle: ${vehicle}`,
+  `Registration / year: ${registration || 'Not provided'}`,
+  `VIN / rack part number: ${reference || 'Not provided'}`,
+  `Request type: ${route || 'Not specified'}`,
+  '',
+  'What is happening:',
+  message || 'No additional symptoms provided.',
+].join('\n');
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -263,6 +267,7 @@ setRequestType('');
             <a href="#coverage" data-testid="link-coverage">Coverage</a>
             <a href="#workshop" data-testid="link-workshop">Workshop</a>
             <a href="#process" data-testid="link-process">How it works</a>
+            <a href="#faq" data-testid="link-faq">FAQ</a>
           </div>
           <a
   className="nav-cta"
@@ -281,6 +286,7 @@ setRequestType('');
               <a href="#coverage" onClick={() => setMenuOpen(false)} data-testid="mobile-link-coverage">Coverage</a>
               <a href="#workshop" onClick={() => setMenuOpen(false)} data-testid="mobile-link-workshop">Workshop</a>
               <a href="#process" onClick={() => setMenuOpen(false)} data-testid="mobile-link-process">How it works</a>
+              <a href="#faq" onClick={() => setMenuOpen(false)} data-testid="mobile-link-faq">FAQ</a>
               <>
  <a
   className="button-primary"
@@ -551,39 +557,87 @@ setRequestType('');
           </div>
         </section>
 
-        
+        <section className="section-pad faq" id="faq" aria-labelledby="faq-title">
+  <div className="container-wide faq-grid">
+    <div className="reveal">
+      <div className="eyebrow">/ Common questions</div>
+      <h2 className="display" id="faq-title">Before you<br /><span>send the rack.</span></h2>
+      <div className="blue-rule" />
+      <p className="faq-intro">
+        Send the vehicle details you have available. E&amp;S Motors will help confirm the correct repair, diagnostic or replacement route.
+      </p>
+    </div>
+
+    <div className="faq-list reveal reveal-delay-1">
+      <details className="faq-item">
+        <summary>Can you repair my existing electronic steering rack?</summary>
+        <p>
+          In many cases, an electronic steering rack can be assessed for repair. The correct route depends on the vehicle, rack label, symptoms and diagnostic information available.
+        </p>
+      </details>
+
+      <details className="faq-item">
+        <summary>Do you supply replacement steering racks?</summary>
+        <p>
+          E&amp;S Motors supplies selected electronic steering racks for compatible Audi and Porsche vehicles. Exact fitment is confirmed before a unit is supplied.
+        </p>
+      </details>
+
+      <details className="faq-item">
+        <summary>What information should I send for a quote?</summary>
+        <p>
+          Send the vehicle model, year, registration, VIN and steering-rack part number if available. Photos of the rack label and any warning messages can also help with the assessment.
+        </p>
+      </details>
+
+      <details className="faq-item">
+        <summary>Do you assist customers outside your local area?</summary>
+        <p>
+          E&amp;S Motors assists customers across South Africa. Send your vehicle and rack details first so the correct next step can be confirmed.
+        </p>
+      </details>
+
+      <details className="faq-item">
+        <summary>How long does a steering-rack repair take?</summary>
+        <p>
+          Timing depends on the rack, the fault and the assessment required. A more accurate timeframe can be confirmed after the vehicle and rack details have been reviewed.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
         <section className="split-section" aria-label="Repair and replacement">
           <div className="split-image">
             <div className="image-caption">The rack is the message / We read it carefully</div>
           </div>
           <div className="split-copy reveal">
-            <div className="eyebrow">/ Usefull Tip</div>
-            <h2>Signs of a<br />bad rack.</h2>
-            <p>A steering rack is the core part of a car steering system. It changes the turning motion of your steering wheel into the side-to-side movement that turns your front wheels. Look out for the following signs which require immediate repair / service: </p>
-          <ul className="detail-list">
+           <div className="eyebrow">/ Useful tip</div>
+<h2>Signs of a<br />steering fault.</h2>
+<p>Electronic steering problems can show up in several ways. A warning light or change in steering feel should be checked before the fault becomes a larger repair.</p>
+<ul className="detail-list">
   <li>
     <span className="warning-icon">!</span>
-    <strong>Loose wheel:</strong> A dead spot where the car does not turn right away.
+    <strong>Warning light:</strong> Steering or power-assistance warnings appear on the dashboard.
   </li>
 
   <li>
     <span className="warning-icon">!</span>
-    <strong>Hard turning:</strong> The wheel feels heavy or tight.
+    <strong>Heavy steering:</strong> The steering wheel suddenly feels stiff or difficult to turn.
   </li>
 
   <li>
     <span className="warning-icon">!</span>
-    <strong>Fluid leaks:</strong> Puddles or wet spots from broken seals.
+    <strong>Intermittent assistance:</strong> Power assistance cuts in and out while driving.
   </li>
 
   <li>
     <span className="warning-icon">!</span>
-    <strong>Car wandering:</strong> The vehicle drifts or is hard to keep straight in a lane.
+    <strong>Unusual noises:</strong> Clicking, grinding, clunking or knocking sounds when turning.
   </li>
 
   <li>
     <span className="warning-icon">!</span>
-    <strong>Noises:</strong> Grinding, clunking, or knocking sounds when turning.
+    <strong>Inconsistent steering:</strong> The steering feels loose, notchy or different from one turn to the next.
   </li>
 </ul>
           </div>
@@ -597,7 +651,27 @@ setRequestType('');
               <p>
   Whether you need a stock steering rack, a repair assessment or diagnostic
   support, send us the vehicle details and we will help identify the right route.
+  The more detail you provide, the faster we can narrow down the correct option.
 </p>
+
+<ul className="request-checklist">
+  <li>
+    <span>01</span>
+    Vehicle model and year
+  </li>
+  <li>
+    <span>02</span>
+    Registration or VIN, if available
+  </li>
+  <li>
+    <span>03</span>
+    Steering-rack part number, if available
+  </li>
+  <li>
+    <span>04</span>
+    Warning lights and steering symptoms
+  </li>
+</ul>
               <button className="button-ghost" onClick={() => scrollTo('top')} data-testid="button-back-to-top">Back to the top <ArrowDownRight size={15} style={{ transform: 'rotate(225deg)' }} /></button>
             </div>
             <form className="contact-form reveal reveal-delay-1" onSubmit={submitForm} data-testid="form-contact">
@@ -610,10 +684,15 @@ setRequestType('');
                   <label htmlFor="name">Your name</label>
                   <input id="name" name="name" required placeholder="How should we address you?" data-testid="input-name" />
                 </div>
-                <div className="field">
-                  <label htmlFor="email">Best email</label>
-                  <input id="email" name="email" type="email" required placeholder="Where can we reply?" data-testid="input-email" />
-                </div>
+               <div className="field">
+  <label htmlFor="email">Email (optional)</label>
+  <input id="email" name="email" type="email" placeholder="Where can we reply?" data-testid="input-email" />
+</div>
+
+<div className="field">
+  <label htmlFor="phone">Phone / WhatsApp</label>
+  <input id="phone" name="phone" type="tel" required placeholder="+27 73 950 2924" data-testid="input-phone" />
+</div>
                 <div className="field">
                   <label htmlFor="vehicle">Vehicle</label>
                   <input
@@ -627,9 +706,14 @@ setRequestType('');
 />
                 </div>
                 <div className="field">
-                  <label htmlFor="registration">Registration / year</label>
-                  <input id="registration" name="registration" placeholder="Optional" data-testid="input-registration" />
-                </div>
+  <label htmlFor="registration">Registration / year</label>
+  <input id="registration" name="registration" placeholder="Optional" data-testid="input-registration" />
+</div>
+
+<div className="field">
+  <label htmlFor="reference">VIN / rack part number</label>
+  <input id="reference" name="reference" placeholder="Optional but helpful" data-testid="input-reference" />
+</div>
                 <div className="field full">
                   <label htmlFor="route">What do you need?</label>
                  <select
@@ -682,7 +766,7 @@ setRequestType('');
             <div>
               <a className="brand" href="#top" data-testid="link-footer-brand">
                 <img className="brand-logo" src="/logo.svg" alt="E&S Motors" />
-                <span className="brand-copy"><span className="brand-name">E&amp;S Motors</span><span className="brand-sub">Steering rack specialists</span></span>
+                <span className="brand-copy"><span className="brand-name">E&amp;S Motors Group</span><span className="brand-sub">Steering rack specialists</span></span>
               </a>
               <p className="footer-note">
   Focused expertise for electronic steering racks across selected Audi and Porsche vehicles.
