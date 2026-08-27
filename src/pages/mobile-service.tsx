@@ -16,7 +16,7 @@ export default function MobileServicePage() {
         <a className="brand" href="/">
           <img className="brand-logo" src="/logo.svg" alt="E&S Motors" />
           <span className="brand-copy">
-            <span className="brand-name">E&amp;S Motors</span>
+            <span className="brand-name">E&amp;S Motors Group</span>
             <span className="brand-sub">Steering rack specialists</span>
           </span>
         </a>

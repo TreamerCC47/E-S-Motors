@@ -16,7 +16,7 @@ export default function AboutPage() {
         <a className="brand" href="/">
           <img className="brand-logo" src="/logo.svg" alt="E&S Motors" />
           <span className="brand-copy">
-            <span className="brand-name">E&amp;S Motors</span>
+            <span className="brand-name">E&amp;S Motors Group</span>
             <span className="brand-sub">Steering rack specialists</span>
           </span>
         </a>
@@ -29,7 +29,7 @@ export default function AboutPage() {
       <main>
         <section className="inner-page-hero">
           <div className="container-wide">
-            <div className="eyebrow">/ About E&amp;S Motors</div>
+            <div className="eyebrow">/ About E&amp;S Motors Group</div>
             <h1 className="display">
               Specialist work.<br />
               <span>Clear advice.</span>

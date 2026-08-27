@@ -268,11 +268,9 @@ setRequestType('');
           </a>
        <div className="nav-links">
   <a href="#expertise" data-testid="link-expertise">Expertise</a>
-  <a href="/about" data-testid="link-about">About</a>
   <a href="#coverage" data-testid="link-coverage">Coverage</a>
-
-  <a href="#process" data-testid="link-process">How it works</a>
   <a href="/mobile-service" data-testid="link-mobile-service">Mobile service</a>
+    <a href="/about" data-testid="link-about">About</a>
   <a href="#faq" data-testid="link-faq">FAQ</a>
 </div>
           <a
@@ -289,10 +287,9 @@ setRequestType('');
           {menuOpen && (
             <div className="mobile-menu">
               <a href="#expertise" onClick={() => setMenuOpen(false)} data-testid="mobile-link-expertise">Expertise</a>
-              <a href="/about" onClick={() => setMenuOpen(false)} data-testid="mobile-link-about">About</a>
-              <a href="#coverage" onClick={() => setMenuOpen(false)} data-testid="mobile-link-coverage">Coverage</a>
-  <a href="#process" onClick={() => setMenuOpen(false)} data-testid="mobile-link-process">How it works</a>
+         <a href="#coverage" onClick={() => setMenuOpen(false)} data-testid="mobile-link-coverage">Coverage</a>
               <a href="/mobile-service" onClick={() => setMenuOpen(false)} data-testid="mobile-link-mobile-service">Mobile service</a>
+                   <a href="/about" onClick={() => setMenuOpen(false)} data-testid="mobile-link-about">About</a>
 <a href="#faq" onClick={() => setMenuOpen(false)} data-testid="mobile-link-faq">FAQ</a>
               <>
  <a
@@ -836,9 +833,10 @@ setRequestType('');
 </div>
             </div>
             <div className="footer-nav">
-  <a href="#expertise" data-testid="footer-link-expertise">Expertise</a>
+  
   <a href="#coverage" data-testid="footer-link-coverage">Coverage</a>
   <a href="#request" data-testid="footer-link-request">Request help</a>
+  <a href="/about" data-testid="footer-link-about">About</a>
   <a
     href={FACEBOOK_LINK}
     target="_blank"
