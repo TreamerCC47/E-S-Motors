@@ -266,13 +266,15 @@ setRequestType('');
               <span className="brand-sub">Steering rack specialists</span>
             </span>
           </a>
-          <div className="nav-links">
-            <a href="#expertise" data-testid="link-expertise">Expertise</a>
-            <a href="#coverage" data-testid="link-coverage">Coverage</a>
-            <a href="#workshop" data-testid="link-workshop">Workshop</a>
-            <a href="#process" data-testid="link-process">How it works</a>
-            <a href="#faq" data-testid="link-faq">FAQ</a>
-          </div>
+       <div className="nav-links">
+  <a href="#expertise" data-testid="link-expertise">Expertise</a>
+  <a href="/about" data-testid="link-about">About</a>
+  <a href="#coverage" data-testid="link-coverage">Coverage</a>
+
+  <a href="#process" data-testid="link-process">How it works</a>
+  <a href="/mobile-service" data-testid="link-mobile-service">Mobile service</a>
+  <a href="#faq" data-testid="link-faq">FAQ</a>
+</div>
           <a
   className="nav-cta"
   href="#request"
@@ -287,10 +289,11 @@ setRequestType('');
           {menuOpen && (
             <div className="mobile-menu">
               <a href="#expertise" onClick={() => setMenuOpen(false)} data-testid="mobile-link-expertise">Expertise</a>
+              <a href="/about" onClick={() => setMenuOpen(false)} data-testid="mobile-link-about">About</a>
               <a href="#coverage" onClick={() => setMenuOpen(false)} data-testid="mobile-link-coverage">Coverage</a>
-              <a href="#workshop" onClick={() => setMenuOpen(false)} data-testid="mobile-link-workshop">Workshop</a>
-              <a href="#process" onClick={() => setMenuOpen(false)} data-testid="mobile-link-process">How it works</a>
-              <a href="#faq" onClick={() => setMenuOpen(false)} data-testid="mobile-link-faq">FAQ</a>
+  <a href="#process" onClick={() => setMenuOpen(false)} data-testid="mobile-link-process">How it works</a>
+              <a href="/mobile-service" onClick={() => setMenuOpen(false)} data-testid="mobile-link-mobile-service">Mobile service</a>
+<a href="#faq" onClick={() => setMenuOpen(false)} data-testid="mobile-link-faq">FAQ</a>
               <>
  <a
   className="button-primary"
