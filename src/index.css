@@ -721,9 +721,31 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .inner-page-hero {
+  position: relative;
+  isolation: isolate;
   padding: 120px 0 100px;
-  background: #122630;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 21, 30, .98) 0%,
+      rgba(10, 21, 30, .88) 46%,
+      rgba(10, 21, 30, .48) 100%
+    ),
+    url('/steering-rack-hero.jpg') center / cover;
   color: #edf7f7;
+}
+.inner-page-hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: '';
+  opacity: .16;
+  background-image:
+    linear-gradient(rgba(128, 217, 227, .25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128, 217, 227, .25) 1px, transparent 1px);
+  background-size: 84px 84px;
+  mask-image: linear-gradient(to right, black, transparent 78%);
+  pointer-events: none;
 }
 
 .inner-page-hero .eyebrow {
@@ -919,4 +941,29 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .inner-page-service-note .button-primary {
     width: 100%;
   }
+}
+.inner-page-action {
+  background: #dcebef;
+}
+
+.inner-page-action .button-primary,
+.inner-page-service-note .button-primary {
+  margin-top: 4px;
+}
+
+.inner-page-content {
+  background: #f5f8f8;
+}
+
+.inner-page-copy:first-child {
+  position: relative;
+}
+
+.inner-page-copy:first-child::after {
+  display: block;
+  width: 52px;
+  height: 3px;
+  margin-top: 26px;
+  content: '';
+  background: #80d9e3;
 }

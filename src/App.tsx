@@ -202,6 +202,15 @@ const [selectedModel, setSelectedModel] =
 const [requestVehicle, setRequestVehicle] = useState('');
 const [requestType, setRequestType] = useState('');
 const selectedVehicle = vehicleDetails[selectedModel];
+  useEffect(() => {
+    if (window.location.hash === '#request') {
+      window.requestAnimationFrame(() => {
+        document.getElementById('request')?.scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    }
+  }, []);
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);

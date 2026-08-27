@@ -96,7 +96,7 @@ export default function AboutPage() {
           <div className="container-wide">
             <h2 className="display">Need help with<br /><span>your steering rack?</span></h2>
             <a className="button-primary" href="/#request">
-              Send your vehicle details
+             Start an enquiry
             </a>
           </div>
         </section>
