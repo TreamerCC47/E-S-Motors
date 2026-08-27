@@ -318,7 +318,7 @@ setRequestType('');
         <section className="hero" aria-labelledby="hero-title">
           <div className="container-wide hero-content">
            <div className="eyebrow eyebrow-light reveal">E&amp;S Motors / Electronic steering specialists</div>
-<h1 className="display reveal reveal-delay-1" id="hero-title">Steering<br /><span>sorted.</span></h1>
+<h1 className="display reveal reveal-delay-1" id="hero-title">Steering rack<br /><span>sorted.</span></h1>
 <p className="hero-lead reveal reveal-delay-2">E&amp;S Motors specialises in electronic steering rack diagnostics, repair and supply for selected Audi and Porsche vehicles across South Africa. Send your vehicle details and we’ll help confirm the right route.</p>
             <div className="hero-actions reveal reveal-delay-3">
               <a
