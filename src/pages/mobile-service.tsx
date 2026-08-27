@@ -1,12 +1,34 @@
 import { useEffect } from 'react';
 
 export default function MobileServicePage() {
-  useEffect(() => {
+   useEffect(() => {
     const previousTitle = document.title;
+    const descriptionTag = document.querySelector('meta[name="description"]');
+    const canonicalTag = document.querySelector('link[rel="canonical"]');
+
+    const previousDescription = descriptionTag?.getAttribute('content');
+    const previousCanonical = canonicalTag?.getAttribute('href');
+
     document.title = 'Mobile Steering Rack Service South Africa | E&S Motors';
+    descriptionTag?.setAttribute(
+      'content',
+      'E&S Motors provides mobile electronic steering rack assistance across South Africa for selected Audi and Porsche vehicles.'
+    );
+    canonicalTag?.setAttribute(
+      'href',
+      'https://www.eandsmotors.co.za/mobile-service'
+    );
 
     return () => {
       document.title = previousTitle;
+
+      if (previousDescription) {
+        descriptionTag?.setAttribute('content', previousDescription);
+      }
+
+      if (previousCanonical) {
+        canonicalTag?.setAttribute('href', previousCanonical);
+      }
     };
   }, []);
 

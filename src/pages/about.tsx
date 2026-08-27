@@ -1,15 +1,36 @@
 import { useEffect } from 'react';
 
 export default function AboutPage() {
-  useEffect(() => {
+    useEffect(() => {
     const previousTitle = document.title;
+    const descriptionTag = document.querySelector('meta[name="description"]');
+    const canonicalTag = document.querySelector('link[rel="canonical"]');
+
+    const previousDescription = descriptionTag?.getAttribute('content');
+    const previousCanonical = canonicalTag?.getAttribute('href');
+
     document.title = 'About E&S Motors | Electronic Steering Rack Specialists';
+    descriptionTag?.setAttribute(
+      'content',
+      'Learn about E&S Motors and our mobile electronic steering rack diagnostics, repair and supply for selected Audi and Porsche vehicles across South Africa.'
+    );
+    canonicalTag?.setAttribute(
+      'href',
+      'https://www.eandsmotors.co.za/about'
+    );
 
     return () => {
       document.title = previousTitle;
+
+      if (previousDescription) {
+        descriptionTag?.setAttribute('content', previousDescription);
+      }
+
+      if (previousCanonical) {
+        canonicalTag?.setAttribute('href', previousCanonical);
+      }
     };
   }, []);
-
   return (
     <div className="inner-page">
       <header className="inner-page-nav">
