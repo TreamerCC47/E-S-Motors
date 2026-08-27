@@ -9,6 +9,8 @@ import rackFour from './assets/rack-four.jpg';
 import rackFive from './assets/rack-five.jpg';
 import { ErrorBoundary } from '@/components/error-boundary';
 import NotFound from '@/pages/not-found';
+import AboutPage from '@/pages/about';
+import MobileServicePage from '@/pages/mobile-service';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 
 const vehicleDetails = {
@@ -844,7 +846,7 @@ setRequestType('');
   </a>
 </div>
           </div>
-          <div className="footer-bottom"><span>© E&amp;S Motors Pty Ltd. {SERVICE_AREA}.</span></div>
+          <div className="footer-bottom"><span>© E&amp;S Motors Group Pty Ltd. {SERVICE_AREA}.</span></div>
         </div>
       </footer>
     </div>
@@ -856,7 +858,9 @@ function Router() {
     <RoutedErrorBoundary>
       <Switch>
         <Route path="/" component={Home} />
-        <Route component={NotFound} />
+<Route path="/about" component={AboutPage} />
+<Route path="/mobile-service" component={MobileServicePage} />
+<Route component={NotFound} />
       </Switch>
     </RoutedErrorBoundary>
   );
